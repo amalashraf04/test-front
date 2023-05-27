@@ -1,0 +1,31 @@
+
+<div class="screen" style="background-image: url('../../assets/bg1.webp');background-size: cover;" >
+    <div class="container">
+        <div class="row justify-content-center mt-2 pt-5  ">
+            <div class="col-6">
+                <form class="form" [formGroup]="addUserForm" >
+                  
+                  <h3 style="text-align: center;color: rgb(150, 143, 143);">Send Email</h3>
+               
+                 
+                 
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput3" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput3" formControlName="email"  >
+                    <div *ngIf="addUserForm.get('email')?.invalid && addUserForm.get('email')?.touched">
+                      <div *ngIf="addUserForm.get('email')?.hasError('required')">Email is required</div>
+                      <!-- <div *ngIf="addUserForm.get('email')?.hasError('email')">Invalid email address</div> -->
+                      <div *ngIf="addUserForm.get('email')?.hasError('pattern')">Invalid email address</div>
+                    </div>
+                  </div>
+                  
+                 
+               
+                 <br>
+                  <button type="submit" class="btn btn-primary" (click)="adddata()" >Submit</button>
+      
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
